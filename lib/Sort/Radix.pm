@@ -25,7 +25,7 @@ our %EXPORT_TAGS = (  all  => \@EXPORT,
 
 
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 
@@ -69,7 +69,7 @@ __END__
 
 =head1 NAME
 
-Sort::Radix - A multiple pass distribution sort algorithm
+Sort::Radix - A multiple passes distribution sort algorithm
 
 =head1 SYNOPSIS
 
@@ -81,11 +81,13 @@ Sort::Radix - A multiple pass distribution sort algorithm
 
 =head1 DESCRIPTION
 
-This is an implementation based on Jarkko's Wolf boook (Mastering Algorithms with Perl, pp. 145-147).
+This is an implementation based on Jarkko's Wolf book (Mastering Algorithms with Perl, pp. 145-147).
 
 By definition: radix sort is a multiple pass distribution sort algorithm that distributes each item to a bucket according to part of the item's key beginning with the least significant part of the key. After each pass, items are collected from the buckets, keeping the items in order, then redistribute according to the next most significant part of the key. 
 
 Radix sort is nice as it take N * M passes, where N is the length of the keys. It is very useful for sorting large volumes of keys of the same length, such as postal codes.
+
+The algorithm will only works when the strings to be sorted are of the same length. Variable length strings therefore have to be padded with zeroes (\x00) to equalize the length.
 
 =head1 BUGS
 
@@ -93,10 +95,9 @@ Unknown so far. But please kindly inform if you find one ;-)
 
 =head1 HISTORY
 
-=item v 0.03, Friday, January 21, 2005
+=item v 0.04, Friday, January 21, 2005
 
-
- Fixed warning caused by operator precedence and undefined error caused by misplacing the routines af ter __END__ marker.
+Fixed warning caused by operator precedence and undefined error caused by misplacing the routines after __END__ marker.
 
 =head1 SEE ALSO
 
