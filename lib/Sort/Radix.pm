@@ -25,7 +25,7 @@ our %EXPORT_TAGS = (  all  => \@EXPORT,
 
 
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 
@@ -93,7 +93,7 @@ Unknown so far. But please kindly inform if you find one ;-)
 
 =head1 HISTORY
 
-=item v 0.02, Friday, January 21, 2005
+=item v 0.03, Friday, January 21, 2005
 
 
  Fixed warning caused by operator precedence and undefined error caused by misplacing the routines af ter __END__ marker.
@@ -104,7 +104,7 @@ L<Sort::Merge>, L<Sort::Fields>
 
 =head1 IMPLEMENTOR
 
-Edward Wijaya, E<lt>edward@localdomainE<gt>
+Edward Wijaya, E<lt>ewijaya@singnet.com.sgE<gt>
 
 =head1 AUTHOR
 
